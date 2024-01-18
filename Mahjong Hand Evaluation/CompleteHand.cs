@@ -151,6 +151,7 @@
             //    DoubleSequence = false;
             //    TwiceDoubleSequence = false;
             //}
+            //Test Commit
             if (Pair.Type == Tile.TYPE.WIND || Pair.Type == Tile.TYPE.DRAGON)
             {
                 honor.Add(Pair.Type);
