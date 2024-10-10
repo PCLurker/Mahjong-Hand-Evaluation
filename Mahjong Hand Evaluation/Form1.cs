@@ -111,7 +111,19 @@ namespace Mahjong_Hand_Evaluation
 
             foreach (Pattern p in Pattern.ListOfPattern)
             {
-                richTextBox_PatternRule.Text += "    " + p.Name + " - " + p.Value + "\n" + p.Description + "\n";
+                richTextBox_PatternRule.Text += $"    {p.Name} - {p.Value}\n{p.Description}\n";
+                if (p.Close == Pattern.CLOSE.YES)
+                    richTextBox_PatternRule.Text += "Hand must be closed\n";
+                else if (p.Close == Pattern.CLOSE.BONUS)
+                    richTextBox_PatternRule.Text += "If closed hand, +1\n";
+                richTextBox_PatternRule.Text += "\n";
+            }
+
+            richTextBox_PatternRule.Text += "\nOptional Yaku:\n\n\n";
+
+            foreach (Pattern p in Pattern.ListOfPatternOptional)
+            {
+                richTextBox_PatternRule.Text += $"    {p.Name} - {p.Value}\n{p.Description}\n";
                 if (p.Close == Pattern.CLOSE.YES)
                     richTextBox_PatternRule.Text += "Hand must be closed\n";
                 else if (p.Close == Pattern.CLOSE.BONUS)

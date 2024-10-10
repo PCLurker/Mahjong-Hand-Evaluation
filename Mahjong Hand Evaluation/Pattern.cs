@@ -103,8 +103,15 @@
         internal static Pattern THIRTEEN_ORPHANS = new("13 Orphans", 13, CLOSE.NO,
             "12 different Terminal/Honor tiles and a pair of the 13th tile"); //No open sets can be made. Functionally yes
 
-        public static List<Pattern> ListOfPattern { get; protected set; } = new()
-        {
+        ///Optional yaku
+
+        internal static Pattern SIX_CONNECTED = new("6-connected", 4, CLOSE.YES,
+            "2 identical series of 6 consecutive tiles of 1 suit (This pattern can be applied to both standard hand and 7 pairs hand)");
+        internal static Pattern SEVEN_CONNECTED = new("7-connected", 7, CLOSE.YES,
+            "2 identical series of 7 consecutive tiles of 1 suit (This pattern can be applied to both standard hand and 7 pairs hand)");
+
+        public static List<Pattern> ListOfPattern { get; protected set; } =
+        [
             HONOR_BONUS,
             NO_POINT,
             DOUBLE_SEQUENCE,
@@ -138,7 +145,13 @@
             LITTLE_FOUR_WIND,
             SEVEN_PAIRS,
             THIRTEEN_ORPHANS
-        };
+        ];
+
+        public static List<Pattern> ListOfPatternOptional { get; protected set; } =
+        [
+            SIX_CONNECTED,
+            SEVEN_CONNECTED
+        ];
     }
     
 }
